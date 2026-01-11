@@ -450,34 +450,79 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
 /* 1. Membuat Gradasi Hero Lebih Terang */
 .hero-overlay {
     /* Sebelumnya 0.9 (sangat gelap), diubah ke 0.7 dan 0.4 agar lebih terang */
-    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%) !important;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%) !important;
 }
 
-/* 2. Partner Icons: Langsung Oranye & Efek Timbul */
+/* ==========================================================================
+   TOMBOL BACK TO TOP (KOTAK MINIMALIS)
+   ========================================================================== */
+#backToTop {
+    display: none; /* Diatur oleh JS nanti */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;       /* Ukuran kotak kecil */
+    height: 45px;
+    background-color: #1a1a1a; /* Hitam elegan, bukan hitam pekat */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px; /* Sudut sedikit melengkung (kotak modern) */
+    cursor: pointer;
+    z-index: 9999;
+    
+    /* Flexbox biar panah pas di tengah */
+    justify-content: center;
+    align-items: center;
+    
+    /* Transisi halus */
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-/* Warna default ikon langsung Gold/Oranye (tidak abu-abu lagi) */
+/* Efek saat mouse diarahkan (Hover) */
+#backToTop:hover {
+    background-color: var(--gold); /* Berubah jadi emas brand Anda */
+    color: #000000;
+    transform: translateY(-3px); /* Naik sedikit, tidak lebay */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Penyesuaian di HP agar tidak menutupi konten penting */
+@media (max-width: 768px) {
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        opacity: 0.9;
+    }
+}
+/* ==========================================================================
+   REVISI FINAL: PARTNER ICONS (Garis Balik, Shadow Ilang)
+   ========================================================================== */
+
+/* 1. Kondisi Awal (Diam) */
+.partner-card {
+    border: 1px solid #eee !important; /* Garis abu-abu tipis balik lagi */
+    box-shadow: none !important; /* Gak usah pake shadow aneh-aneh */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    background: #fff;
+}
+
+/* Warna ikon default langsung OREN/EMAS (Sesuai request biar gak mati) */
 .partner-icon {
     color: var(--gold) !important;
-    transition: transform 0.3s ease, text-shadow 0.3s ease !important;
+    transition: transform 0.3s ease !important;
 }
 
-/* Hapus border abu-abu default agar lebih bersih */
-.partner-card {
-    border-color: transparent !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Shadow halus di awal */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-}
-
-/* Efek Hover: HANYA Gerakan Timbul (Pop-up) & Bayangan */
+/* 2. Kondisi Pas Di-Hover (Gerak) */
 .partner-card:hover {
-    transform: translateY(-8px) !important; /* Gerak naik lebih tinggi */
-    box-shadow: 0 15px 30px rgba(255, 193, 7, 0.2) !important; /* Bayangan oranye lembut */
-    border-color: transparent !important; /* Tidak perlu border kuning lagi */
+    transform: translateY(-5px) !important; /* Tetap naik dikit biar interaktif */
+    border-color: var(--gold) !important; /* GARISNYA JADI OREN */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important; /* Shadow abu tipis aja buat efek 3D, bukan oren */
 }
 
-/* Ikon sedikit membesar & bersinar saat card di-hover */
+/* Ikon ikut membesar dikit pas di-hover */
 .partner-card:hover .partner-icon {
-    transform: scale(1.1); /* Sedikit membesar */
-    /* color: var(--gold) !important; <-- Baris ini DIPASTIKAN DIHAPUS/TIMPA agar warna tidak berubah */
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Efek 'glowing' */
+    transform: scale(1.1);
 }
