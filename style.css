@@ -421,3 +421,25 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
         margin-left: 0; /* Reset margin */
     }
 }
+/* ==========================================================================
+   PATCH: HEADER PRODUK RATA TENGAH
+   ========================================================================== */
+.header-flex {
+    justify-content: center !important; /* Memusatkan secara horizontal (Flex) */
+    text-align: center !important;      /* Memusatkan teks */
+    align-items: center !important;     /* Memusatkan item vertikal */
+    flex-direction: column !important;  /* Menumpuk judul & deskripsi */
+    width: 100%;
+}
+
+.header-flex div {
+    width: 100%;
+    max-width: 800px; /* Membatasi lebar agar teks tidak terlalu panjang di PC */
+    margin: 0 auto;
+}
+
+/* Memastikan warna deskripsi tetap terang (sesuai request sebelumnya) */
+.header-flex p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-top: 10px;
+}
