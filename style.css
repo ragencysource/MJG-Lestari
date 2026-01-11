@@ -377,3 +377,47 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
     .footer h4::after { left: 50%; transform: translateX(-50%); }
     .social-icons, .contact-list li { justify-content: center; }
 }
+/* ==========================================================================
+   PATCH REVISI: WARNA & FAQ FIX
+   ========================================================================== */
+
+/* 1. PERBAIKAN WARNA (Agar lebih putih/terang di background gelap) */
+
+/* Warna sub-judul "KATALOG PRODUK" di background gelap */
+.bg-dark .section-sub {
+    color: rgba(255, 255, 255, 0.8) !important; 
+}
+
+/* Warna deskripsi "Pilih varian..." di background gelap */
+.bg-dark .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important; /* Dibuat abu-abu terang */
+}
+
+/* Warna Teks Footer (Deskripsi & Link) */
+.footer {
+    color: #cccccc !important; /* Abu-abu muda, hampir putih */
+}
+.footer p, .footer a {
+    color: #cccccc !important;
+}
+.footer a:hover {
+    color: var(--gold) !important;
+}
+
+/* 2. PERBAIKAN FAQ DI HP (Agar teks tidak nabrak tombol +) */
+@media (max-width: 768px) {
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Ikon dan teks sejajar vertikal */
+        gap: 20px; /* MEMBERI JARAK AMAN antara teks dan ikon */
+        text-align: left; /* Teks rata kiri */
+        width: 100%;
+    }
+
+    /* Memastikan ikon (+) tidak gepeng/mengecil kalau teksnya panjang */
+    .faq-question i {
+        flex-shrink: 0; 
+        margin-left: 0; /* Reset margin */
+    }
+}
