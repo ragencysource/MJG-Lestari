@@ -593,3 +593,31 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
         padding-bottom: 10px; /* Safety padding */
     }
 }
+/* ==========================================================================
+   FIX REVISI: HERO MOBILE (Biar Gak Kepanjangan)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero {
+        /* Kita reset tinggi dan paddingnya khusus HP */
+        min-height: auto !important;       /* Jangan maksa setinggi layar */
+        height: auto !important;           /* Tinggi ngikutin isi konten aja */
+        
+        /* Kurangi jarak atas & bawah biar rapet */
+        padding-top: 110px !important;     /* Cukup segini biar pas di bawah navbar HP */
+        padding-bottom: 40px !important;   /* Jarak bawah dikit aja */
+    }
+
+    .hero-content {
+        padding-top: 0 !important;         /* Hapus padding tambahan konten */
+    }
+
+    .hero-subtitle {
+        margin-bottom: 30px !important;    /* Rapatkan jarak deskripsi ke tombol */
+    }
+
+    /* Pastikan indikator bawah (checklist) gak kejauhan */
+    .trust-indicators {
+        margin-top: 30px !important;
+        padding-bottom: 0 !important;
+    }
+}
