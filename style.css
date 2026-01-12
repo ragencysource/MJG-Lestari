@@ -526,4 +526,80 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
 .partner-card:hover .partner-icon {
     transform: scale(1.1);
 }
+/* ==========================================================================
+   REVISI HERO: BADGE VERIFIED & DESKTOP HIERARCHY
+   ========================================================================== */
+
+/* 1. BADGE KUNING "SUPPLIER TERPERCAYA" (Berlaku HP & Desktop) */
+.hero-eyebrow {
+    background-color: var(--gold);      /* Background Kuning */
+    color: var(--black) !important;     /* Teks Hitam Tegas */
+    display: inline-flex;               /* Agar ikon & teks sejajar rapi */
+    align-items: center;
+    gap: 10px;                          /* Jarak ikon ke teks */
+    padding: 10px 24px;                 /* Padding biar bentuknya 'Pill' cantik */
+    border-radius: 50px;                /* Sudut membulat total */
+    font-weight: 800;                   /* Font tebal */
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;                /* Jarak ke Judul Utama */
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3); /* Glowing effect halus */
+    text-transform: uppercase;
+    width: auto;                        /* Lebar menyesuaikan teks */
+}
+
+/* Biar di HP badge-nya ada di tengah */
+@media (max-width: 768px) {
+    .hero-eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.75rem;
+        padding: 8px 20px;
+    }
+}
+
+/* 2. PERBAIKAN HIRARKI VISUAL KHUSUS DESKTOP (Agar Profesional) */
+@media (min-width: 769px) {
+    
+    /* Konten Hero */
+    .hero-content {
+        max-width: 950px; /* Lebar konten diperluas agar teks tidak sempit */
+        padding-top: 60px; /* Fine-tuning posisi vertikal */
+    }
+
+    /* Judul Utama (Headline) */
+    .hero-title {
+        font-size: 4.2rem; /* Diperbesar agar dominan & gagah */
+        line-height: 1.15; /* Jarak antar baris judul dirapatkan sedikit */
+        margin-bottom: 35px; /* Memberi napas sebelum masuk ke deskripsi */
+        letter-spacing: -1px; /* Kesan modern & padat */
+    }
+
+    /* Deskripsi (Subtitle) */
+    .hero-subtitle {
+        font-size: 1.25rem; /* Ukuran baca yang nyaman di mata */
+        line-height: 1.8;   /* Jarak antar baris renggang (Easy to read) */
+        margin-bottom: 50px; /* Jarak jauh ke tombol (Negative Space = Mewah) */
+        max-width: 700px;   /* Membatasi panjang baris agar mata tidak lelah */
+        color: rgba(255, 255, 255, 0.95); /* Putih terang */
+        font-weight: 400;
+    }
+
+    /* Tombol-tombol */
+    .hero-buttons {
+        gap: 20px; /* Jarak antar tombol */
+    }
+    
+    .hero-buttons .btn {
+        padding: 16px 40px; /* Tombol lebih besar di desktop */
+        font-size: 1.1rem;
+    }
+
+    /* Trust Indicators (Icon Checklist di bawah) */
+    .trust-indicators {
+        margin-top: 60px; /* Jarak dari tombol ke indikator */
+        gap: 40px;        /* Jarak antar indikator */
+        font-size: 1rem;
+    }
+}
 
