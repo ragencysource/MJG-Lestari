@@ -92,7 +92,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
 .hero { 
     height: 100vh; 
     min-height: 700px; 
-    background: url('https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; 
+    background: url('https://ik.imagekit.io/z8trjkh8f/heromjg.jpg?updatedAt=1768215152210') no-repeat center center/cover; 
     position: relative; 
     display: flex; 
     align-items: center; 
@@ -526,3 +526,4 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
 .partner-card:hover .partner-icon {
     transform: scale(1.1);
 }
+
