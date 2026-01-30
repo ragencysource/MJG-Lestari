@@ -664,4 +664,105 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--black); fo
 .product-card:hover .custom-price-box {
     background-color: #fffcf0; /* Jadi agak kekuningan dikit pas dihover */
     border-style: solid;       /* Garis jadi tegas */
+
+}
+/* ==========================================================================
+   SECTION: REQUEST CUSTOM (DI BAWAH PRODUK)
+   ========================================================================== */
+
+.request-custom-box {
+    margin-top: 60px;
+    background: rgba(255, 255, 255, 0.05); /* Background transparan tipis */
+    border: 1px solid var(--gold);         /* Border Emas Tegas */
+    border-radius: 12px;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;        /* Teks di kiri, Tombol di kanan */
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek hiasan cahaya emas di pojok (biar mewah) */
+.request-custom-box::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -10%;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(255,193,7,0.15) 0%, rgba(0,0,0,0) 70%);
+    z-index: 0;
+}
+
+.request-text {
+    position: relative; z-index: 1;
+    text-align: left;
+    max-width: 700px;
+}
+
+.request-text h3 {
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.request-text p {
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Tombol Khusus Outline Gold */
+.btn-outline-gold {
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    font-weight: 700;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Biar teks tombol gak turun baris */
+}
+
+.btn-outline-gold:hover {
+    background: var(--gold);
+    color: var(--black);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .request-custom-box {
+        flex-direction: column; /* HP: Tumpuk ke bawah */
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 40px;
+        gap: 20px;
+    }
+
+    .request-text {
+        text-align: center;
+    }
+
+    .request-text h3 {
+        justify-content: center; /* Judul rata tengah */
+        font-size: 1.2rem;
+    }
+    
+    .request-text p {
+        font-size: 0.95rem;
+    }
+
+    .request-btn-wrapper {
+        width: 100%;
+    }
+    
+    .btn-outline-gold {
+        width: 100%; /* Tombol full width di HP */
+        justify-content: center;
+    }
 }
